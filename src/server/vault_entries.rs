@@ -44,10 +44,10 @@ pub struct GetVaultEntryRequest {
 pub struct UpdateVaultEntryRequest {
     #[prost(string, tag = "1")]
     pub vault_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub description: ::prost::alloc::string::String,
+    #[prost(string, optional, tag = "2")]
+    pub title: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "3")]
+    pub description: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, tag = "4")]
     pub vault_entry_id: ::prost::alloc::string::String,
 }
