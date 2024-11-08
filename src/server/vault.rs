@@ -112,6 +112,22 @@ pub struct ListVaultsResponse {
     #[prost(uint32, tag = "2")]
     pub total_count: u32,
 }
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListVaultEntryRequest {
+    #[prost(string, tag = "1")]
+    pub vault_id: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "4")]
+    pub page: u32,
+    #[prost(uint32, tag = "5")]
+    pub page_size: u32,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListVaultEntryResponse {
+    #[prost(message, repeated, tag = "1")]
+    pub vault_entries: ::prost::alloc::vec::Vec<VaultEntries>,
+    #[prost(uint32, tag = "2")]
+    pub total_count: u32,
+}
 /// Generated server implementations.
 pub mod vault_manager_server {
     #![allow(
@@ -158,6 +174,13 @@ pub mod vault_manager_server {
             request: tonic::Request<super::ListVaultsRequest>,
         ) -> std::result::Result<
             tonic::Response<super::ListVaultsResponse>,
+            tonic::Status,
+        >;
+        async fn list_vault_entries(
+            &self,
+            request: tonic::Request<super::ListVaultEntryRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListVaultEntryResponse>,
             tonic::Status,
         >;
     }
@@ -447,6 +470,52 @@ pub mod vault_manager_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListVaultsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/vault.VaultManager/ListVaultEntries" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListVaultEntriesSvc<T: VaultManager>(pub Arc<T>);
+                    impl<
+                        T: VaultManager,
+                    > tonic::server::UnaryService<super::ListVaultEntryRequest>
+                    for ListVaultEntriesSvc<T> {
+                        type Response = super::ListVaultEntryResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListVaultEntryRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as VaultManager>::list_vault_entries(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListVaultEntriesSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

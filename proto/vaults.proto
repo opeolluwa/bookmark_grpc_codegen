@@ -10,6 +10,8 @@ service VaultManager {
   rpc UpdateVault(UpdateVaultRequest) returns (GetVaultResponse);
   rpc DeleteVault(DeleteVaultRequest) returns (DeleteVaultResponse);
   rpc ListVaults(ListVaultsRequest) returns (ListVaultsResponse);
+  rpc ListVaultEntries(ListVaultEntryRequest) returns (ListVaultEntryResponse);
+
 }
 
 message VaultEntries {
@@ -77,5 +79,18 @@ message Vault {
 }
 message ListVaultsResponse {
   repeated Vault vaults = 1;
+  uint32 total_count = 2;
+}
+
+
+message ListVaultEntryRequest {
+  string vault_id = 1;
+  uint32 page = 4;
+  uint32 page_size = 5;
+}
+
+
+message ListVaultEntryResponse {
+  repeated VaultEntries vault_entries = 1;
   uint32 total_count = 2;
 }

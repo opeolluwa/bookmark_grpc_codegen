@@ -60,24 +60,6 @@ pub struct DeleteVaultEntryResponse {
     #[prost(string, tag = "4")]
     pub status: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListVaultEntryRequest {
-    #[prost(string, tag = "1")]
-    pub vault_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub vault_entry_id: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "4")]
-    pub page: u32,
-    #[prost(uint32, tag = "5")]
-    pub page_size: u32,
-}
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListVaultEntryResponse {
-    #[prost(message, repeated, tag = "1")]
-    pub vault_entries: ::prost::alloc::vec::Vec<GetVaultEntryResponse>,
-    #[prost(uint32, tag = "2")]
-    pub total_count: u32,
-}
 /// Generated client implementations.
 pub mod vault_entries_manager_client {
     #![allow(
@@ -278,35 +260,6 @@ pub mod vault_entries_manager_client {
                     GrpcMethod::new(
                         "vault_entries.VaultEntriesManager",
                         "DeleteVaultEntry",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn list_vault_entries(
-            &mut self,
-            request: impl tonic::IntoRequest<super::ListVaultEntryRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::ListVaultEntryResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/vault_entries.VaultEntriesManager/ListVaultEntries",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "vault_entries.VaultEntriesManager",
-                        "ListVaultEntries",
                     ),
                 );
             self.inner.unary(req, path, codec).await
