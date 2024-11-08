@@ -1,6 +1,6 @@
 {
-  "email": "{{ faker.internet.example_email }}",
-  "password": "{{ faker.internet.password }}",
+  "email": "adeoye@yahoo.com",
+  "password": "adeoye",
   "firstName": "{{ faker.name.first_name }}",
   "lastName": "{{ faker.name.last_name }}"
 }

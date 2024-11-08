@@ -1,0 +1,20 @@
+{
+  "settings": [
+    {
+      "options": {
+        "grpc": {
+          "endpoint": "http://127.0.0.1:50051",
+          "metadata": [
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoiYWRlb3llQHlhaG9vLmNvbSIsInVzZXJfaWQiOiJjMjI3NTdiNC03YjNjLTQ4NDUtYTcwMy05YzRjNDQ0OGM2ZjQiLCJleHAiOjIwMDAwMDAwMDB9.TgvSelgkIitziyzTl-1th-u0gATdcG2GxvICe77O5Uc"
+            }
+          ]
+        },
+        "rest": {
+          "pathParams": []
+        }
+      }
+    }
+  ]
+}
