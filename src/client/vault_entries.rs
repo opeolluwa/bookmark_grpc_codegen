@@ -12,8 +12,6 @@ pub struct NewVaultEntryRequest {
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
-    #[prost(string, tag = "5")]
-    pub user_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetVaultEntryResponse {
@@ -32,8 +30,6 @@ pub struct GetVaultEntryResponse {
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
-    #[prost(string, tag = "7")]
-    pub user_id: ::prost::alloc::string::String,
     #[prost(string, tag = "8")]
     pub vault_entry_id: ::prost::alloc::string::String,
 }
@@ -43,8 +39,6 @@ pub struct GetVaultEntryRequest {
     pub vault_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub vault_entry_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub user_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateVaultEntryRequest {
@@ -61,8 +55,6 @@ pub struct DeleteVaultEntryResponse {
     pub vault_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub vault_entry_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub user_id: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub status: ::prost::alloc::string::String,
 }
@@ -72,8 +64,6 @@ pub struct ListVaultEntryRequest {
     pub vault_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub vault_entry_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub user_id: ::prost::alloc::string::String,
     #[prost(int32, tag = "4")]
     pub page: i32,
     #[prost(int32, tag = "5")]
