@@ -1,0 +1,19 @@
+{
+  "id": "41fe998f-7e8a-4dc2-b2ec-159fc2e8421b",
+  "importStreams": [
+    {
+      "id": "5992183b-4da7-4c66-a338-03c1eb68849c",
+      "name": "proto-file",
+      "importerName": "ProtoFile",
+      "createMissingOperations": true,
+      "options": {
+        "files": [
+          ".."
+        ],
+        "importPaths": []
+      }
+    }
+  ],
+  "authConfigs": [],
+  "certificates": []
+}

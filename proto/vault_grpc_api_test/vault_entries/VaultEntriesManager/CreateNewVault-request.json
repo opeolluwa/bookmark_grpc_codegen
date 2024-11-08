@@ -1,0 +1,9 @@
+{
+  "title": "IB",
+  "description": "plug-and-play",
+  "vaultId": "{{ faker.random.uuid }}",
+  "moreFields": {
+    "Tasty Money Market Account Planner": "matrix"
+  },
+  "userId": "{{ faker.random.uuid }}"
+}

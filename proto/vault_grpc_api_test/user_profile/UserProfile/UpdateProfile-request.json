@@ -1,0 +1,5 @@
+{
+  "lastName": "{{ faker.name.last_name }}",
+  "firstName": "{{ faker.name.first_name }}",
+  "email": "{{ faker.internet.example_email }}"
+}

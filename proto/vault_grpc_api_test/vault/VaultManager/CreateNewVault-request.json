@@ -1,0 +1,5 @@
+{
+  "name": "{{ faker.name.last_name }}",
+  "description": "Internal alliance virtual",
+  "userId": "{{ faker.random.uuid }}"
+}
