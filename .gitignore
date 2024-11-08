@@ -1,1 +1,2 @@
 /target
+grpc/proto/vault_grpc_api_test

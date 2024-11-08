@@ -24,12 +24,10 @@ message VaultEntries {
 message NewVaultRequest {
   string name = 1;
   string description = 2;
-  string user_id = 3;
 }
 
 message NewVaultResponse {
   string vault_id = 1;
-  string user_id = 2;
   string name = 3;
   string description = 4;
   google.protobuf.Timestamp created_at = 5;
@@ -44,7 +42,6 @@ message GetVaultResponse {
   string description = 3;
   google.protobuf.Timestamp created_at = 4;
   google.protobuf.Timestamp updated_at = 5;
-  string user_id = 6;
   repeated VaultEntries entries = 7;
 }
 

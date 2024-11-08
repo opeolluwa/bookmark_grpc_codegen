@@ -23,15 +23,11 @@ pub struct NewVaultRequest {
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub description: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub user_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NewVaultResponse {
     #[prost(string, tag = "1")]
     pub vault_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub user_id: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
@@ -58,8 +54,6 @@ pub struct GetVaultResponse {
     pub created_at: ::core::option::Option<::prost_types::Timestamp>,
     #[prost(message, optional, tag = "5")]
     pub updated_at: ::core::option::Option<::prost_types::Timestamp>,
-    #[prost(string, tag = "6")]
-    pub user_id: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "7")]
     pub entries: ::prost::alloc::vec::Vec<VaultEntries>,
 }
