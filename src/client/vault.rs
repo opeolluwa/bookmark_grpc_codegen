@@ -87,17 +87,17 @@ pub struct DeleteVaultResponse {
 }
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct ListVaultsRequest {
-    #[prost(int32, tag = "1")]
-    pub page: i32,
-    #[prost(int32, tag = "2")]
-    pub page_size: i32,
+    #[prost(uint32, tag = "1")]
+    pub page: u32,
+    #[prost(uint32, tag = "2")]
+    pub page_size: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListVaultsResponse {
     #[prost(message, repeated, tag = "1")]
     pub vaults: ::prost::alloc::vec::Vec<GetVaultResponse>,
-    #[prost(int32, tag = "2")]
-    pub total_count: i32,
+    #[prost(uint32, tag = "2")]
+    pub total_count: u32,
 }
 /// Generated client implementations.
 pub mod vault_manager_client {

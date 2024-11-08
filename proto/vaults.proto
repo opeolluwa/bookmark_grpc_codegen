@@ -64,11 +64,11 @@ message DeleteVaultResponse {
 }
 
 message ListVaultsRequest {
-  int32 page = 1;
-  int32 page_size = 2;
+  uint32 page = 1;
+  uint32 page_size = 2;
 }
 
 message ListVaultsResponse {
   repeated GetVaultResponse vaults = 1;
-  int32 total_count = 2;
+  uint32 total_count = 2;
 }

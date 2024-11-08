@@ -64,17 +64,17 @@ pub struct ListVaultEntryRequest {
     pub vault_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub vault_entry_id: ::prost::alloc::string::String,
-    #[prost(int32, tag = "4")]
-    pub page: i32,
-    #[prost(int32, tag = "5")]
-    pub page_size: i32,
+    #[prost(uint32, tag = "4")]
+    pub page: u32,
+    #[prost(uint32, tag = "5")]
+    pub page_size: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListVaultEntryResponse {
     #[prost(message, repeated, tag = "1")]
     pub vault_entries: ::prost::alloc::vec::Vec<GetVaultEntryResponse>,
-    #[prost(int32, tag = "2")]
-    pub total_count: i32,
+    #[prost(uint32, tag = "2")]
+    pub total_count: u32,
 }
 /// Generated client implementations.
 pub mod vault_entries_manager_client {
