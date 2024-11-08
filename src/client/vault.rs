@@ -93,9 +93,22 @@ pub struct ListVaultsRequest {
     pub page_size: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Vault {
+    #[prost(string, tag = "1")]
+    pub vault_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub description: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "4")]
+    pub created_at: ::core::option::Option<::prost_types::Timestamp>,
+    #[prost(message, optional, tag = "5")]
+    pub updated_at: ::core::option::Option<::prost_types::Timestamp>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListVaultsResponse {
     #[prost(message, repeated, tag = "1")]
-    pub vaults: ::prost::alloc::vec::Vec<GetVaultResponse>,
+    pub vaults: ::prost::alloc::vec::Vec<Vault>,
     #[prost(uint32, tag = "2")]
     pub total_count: u32,
 }

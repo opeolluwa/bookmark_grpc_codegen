@@ -68,7 +68,14 @@ message ListVaultsRequest {
   uint32 page_size = 2;
 }
 
+message Vault {
+  string vault_id = 1;
+  string name = 2;
+  string description = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
 message ListVaultsResponse {
-  repeated GetVaultResponse vaults = 1;
+  repeated Vault vaults = 1;
   uint32 total_count = 2;
 }
