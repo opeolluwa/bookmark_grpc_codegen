@@ -24,5 +24,6 @@ Add using a git repository
 ```shell
 
 cargo add --git https://gihub.com/opeolluwa/vault_grpc 
+npm i git://github.com/opeolluwa/vault_grpc#v0.7.5
 ```
         
