@@ -1,0 +1,22 @@
+{
+  "name": "vault_grpc_bindings",
+  "version": "1.0.0",
+  "description": "\"Typescript files for vault grpc \"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opeolluwa/vault_grpc.git"
+  },
+  "author": "adeoye adefemi <adefemiadeoye@yahoo.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/opeolluwa/vault_grpc/issues"
+  },
+  "homepage": "https://github.com/opeolluwa/vault_grpc#readme",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
