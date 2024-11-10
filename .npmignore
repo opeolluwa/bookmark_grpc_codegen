@@ -1,0 +1,7 @@
+.idea
+dist 
+proto 
+src
+Cargo*
+.rs
+justfile
