@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package vault_entries;
 
-import "google/protobuf/timestamp.proto";
+// import "google/protobuf/timestamp.proto";
 
 service VaultEntriesManager {
   rpc CreateNewVault(NewVaultEntryRequest) returns (GetVaultEntryResponse);
@@ -22,8 +22,8 @@ message NewVaultEntryRequest {
 message GetVaultEntryResponse {
   string title = 1;
   string description = 2;
-  google.protobuf.Timestamp created_at = 3;
-  google.protobuf.Timestamp updated_at = 4;
+  string created_at = 3;
+  string updated_at = 4;
   string vault_id = 5;
   map<string, string> more_fields = 6;
   string vault_entry_id = 8;
@@ -46,5 +46,3 @@ message DeleteVaultEntryResponse {
   string vault_entry_id = 2;
   string status = 4;
 }
-
-
