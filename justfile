@@ -49,3 +49,11 @@ generate_attributes:
     '
 
 
+
+
+
+compile_for_all_client:
+    just compile_for_rs_client
+    just compile_for_ts_client
+    just generate_attributes
+    just generate_ts_exports
