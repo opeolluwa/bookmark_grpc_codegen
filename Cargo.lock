@@ -152,6 +152,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
 
 [[package]]
+name = "bookmark_grpc_codegen"
+version = "0.7.0"
+dependencies = [
+ "prost",
+ "prost-types",
+ "serde",
+ "tonic",
+ "tonic-build",
+ "tonic-reflection",
+ "ts-rs",
+]
+
+[[package]]
 name = "byteorder"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1077,19 +1090,6 @@ name = "unicode-ident"
 version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
-
-[[package]]
-name = "vault_grpc"
-version = "0.7.0"
-dependencies = [
- "prost",
- "prost-types",
- "serde",
- "tonic",
- "tonic-build",
- "tonic-reflection",
- "ts-rs",
-]
 
 [[package]]
 name = "want"

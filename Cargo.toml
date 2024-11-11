@@ -1,5 +1,5 @@
 [package]
-name = "vault_grpc"
+name = "bookmark_grpc_codegen"
 version = "0.7.0"
 edition = "2021"
 
