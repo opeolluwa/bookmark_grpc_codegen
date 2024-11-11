@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package bookmark_collections_entries;
+
+// import "google/protobuf/timestamp.proto";
+
+service BookmarkCollectionsEntriesManager {
+  rpc CreateNewBookmarkCollectionEntry(NewBookmarkCollectionsEntryRequest)
+      returns (GetBookmarkCollectionsEntryResponse);
+  rpc GetBookmarkCollectionsEntry(GetBookmarkCollectionsEntryRequest)
+      returns (GetBookmarkCollectionsEntryResponse);
+  rpc UpdateBookmarkCollectionsEntry(UpdateBookmarkCollectionsEntryRequest)
+      returns (GetBookmarkCollectionsEntryResponse);
+  rpc DeleteBookmarkCollectionsEntry(UpdateBookmarkCollectionsEntryRequest)
+      returns (DeleteBookmarkCollectionsEntryResponse);
+}
+
+message NewBookmarkCollectionsEntryRequest {
+  string title = 1;
+  string description = 2;
+  string BookmarkCollections_id = 3;
+  map<string, string> more_fields = 4;
+}
+
+message GetBookmarkCollectionsEntryResponse {
+  string title = 1;
+  string description = 2;
+  string created_at = 3;
+  string updated_at = 4;
+  string BookmarkCollections_id = 5;
+  map<string, string> more_fields = 6;
+  string BookmarkCollections_entry_id = 8;
+}
+
+message GetBookmarkCollectionsEntryRequest {
+  string BookmarkCollections_id = 1;
+  string BookmarkCollections_entry_id = 2;
+}
+
+message UpdateBookmarkCollectionsEntryRequest {
+  string BookmarkCollections_id = 1;
+  optional string title = 2;
+  optional string description = 3;
+  string BookmarkCollections_entry_id = 4;
+}
+
+message DeleteBookmarkCollectionsEntryResponse {
+  string BookmarkCollections_id = 1;
+  string BookmarkCollections_entry_id = 2;
+  string status = 4;
+}
