@@ -2,7 +2,7 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+    let _out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 
     let proto_files = load_proto_file("proto").unwrap();
 
@@ -283,7 +283,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .protoc_arg("--proto_path=./proto")
         .build_client(false) // don't compile the client code
         .build_server(true)
-        .file_descriptor_set_path(out_dir.join("vault"))
+        .out_dir("./src/server")
         .compile_protos(&proto_files, &["../proto"])?;
     Ok(())
 }

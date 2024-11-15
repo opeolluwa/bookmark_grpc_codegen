@@ -1,0 +1,6 @@
+{
+  "BookmarkCollectionsId": "{{ faker.random.uuid }}",
+  "title": "cross-media Wooden",
+  "description": "District Representative China",
+  "BookmarkCollectionsEntryId": "{{ faker.random.uuid }}"
+}

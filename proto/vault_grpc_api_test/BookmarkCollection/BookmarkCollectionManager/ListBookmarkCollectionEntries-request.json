@@ -1,0 +1,5 @@
+{
+  "BookmarkCollectionId": "{{ faker.random.uuid }}",
+  "page": 830,
+  "pageSize": 220
+}

@@ -1,0 +1,6 @@
+{
+  "BookmarkCollectionsId": "{{ faker.random.uuid }}",
+  "title": "24/7",
+  "description": "Cuban Peso Small",
+  "BookmarkCollectionsEntryId": "{{ faker.random.uuid }}"
+}

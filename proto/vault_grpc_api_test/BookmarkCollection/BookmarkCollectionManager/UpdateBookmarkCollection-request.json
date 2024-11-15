@@ -1,0 +1,5 @@
+{
+  "BookmarkCollectionId": "{{ faker.random.uuid }}",
+  "name": "{{ faker.name.last_name }}",
+  "description": "Motorway virtual Texas"
+}

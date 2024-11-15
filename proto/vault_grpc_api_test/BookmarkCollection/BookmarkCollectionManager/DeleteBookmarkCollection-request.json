@@ -1,0 +1,3 @@
+{
+  "BookmarkCollectionId": "{{ faker.random.uuid }}"
+}
