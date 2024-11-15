@@ -134,3 +134,5 @@ dist
 .pnp.*
 
 attributes.rs
+
+proto/vault_grpc_api_test
