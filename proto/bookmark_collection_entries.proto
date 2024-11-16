@@ -27,7 +27,7 @@ message GetBookmarkCollectionsEntryResponse {
   string description = 2;
   string created_at = 3;
   string updated_at = 4;
-  string bookmark_collections_id = 5;
+  string bookmark_collection_id = 5;
   map<string, string> more_fields = 6;
   string bookmark_collections_entry_id = 8;
 }
