@@ -1,6 +1,0 @@
-{
-  "email": "adeoye@yahoo.com",
-  "password": "adeoye",
-  "firstName": "{{ faker.name.first_name }}",
-  "lastName": "{{ faker.name.last_name }}"
-}

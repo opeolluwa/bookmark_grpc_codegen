@@ -1,5 +1,0 @@
-{
-  "vaultId": "{{ faker.random.uuid }}",
-  "name": "{{ faker.name.last_name }}",
-  "description": "help-desk"
-}

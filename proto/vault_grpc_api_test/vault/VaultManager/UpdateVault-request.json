@@ -1,5 +1,0 @@
-{
-  "vaultId": "2ac5b11e-c1bc-4680-980a-17798bac4e4d",
-  "name": "{{ faker.name.last_name }}",
-  "description": "overriding"
-}

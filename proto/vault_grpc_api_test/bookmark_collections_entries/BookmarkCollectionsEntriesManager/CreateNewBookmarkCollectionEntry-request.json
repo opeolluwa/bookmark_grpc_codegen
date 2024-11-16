@@ -1,8 +1,0 @@
-{
-  "title": "Awesome navigating",
-  "description": "open-source",
-  "BookmarkCollectionsId": "{{ faker.random.uuid }}",
-  "moreFields": {
-    "Buckinghamshire Total": "Architect Checking Account"
-  }
-}

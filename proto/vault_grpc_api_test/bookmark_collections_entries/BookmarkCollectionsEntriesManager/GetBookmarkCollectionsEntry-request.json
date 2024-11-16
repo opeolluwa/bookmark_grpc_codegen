@@ -1,4 +1,0 @@
-{
-  "BookmarkCollectionsId": "{{ faker.random.uuid }}",
-  "BookmarkCollectionsEntryId": "{{ faker.random.uuid }}"
-}

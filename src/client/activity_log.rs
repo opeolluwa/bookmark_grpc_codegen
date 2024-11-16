@@ -23,6 +23,8 @@ pub struct LogActivityResponse {
     #[prost(string, optional, tag = "2")]
     pub message: ::core::option::Option<::prost::alloc::string::String>,
 }
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum Status {

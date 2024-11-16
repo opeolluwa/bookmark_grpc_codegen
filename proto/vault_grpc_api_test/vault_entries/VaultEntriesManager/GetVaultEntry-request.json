@@ -1,5 +1,0 @@
-{
-  "vaultId": "{{ faker.random.uuid }}",
-  "vaultEntryId": "{{ faker.random.uuid }}",
-  "userId": "{{ faker.random.uuid }}"
-}

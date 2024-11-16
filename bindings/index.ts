@@ -41,6 +41,7 @@ export * from './ProfileUpdateRequest';
 export * from './ProfileUpdateResponse';
 export * from './SignUpRequest';
 export * from './SignUpResponse';
+export * from './Status';
 export * from './UpdateBookmarkCollectionRequest';
 export * from './UpdateBookmarkCollectionResponse';
 export * from './UpdateBookmarkCollectionsEntryRequest';
