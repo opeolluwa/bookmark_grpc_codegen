@@ -7,11 +7,11 @@ package bookmark_collections_entries;
 service BookmarkCollectionsEntriesManager {
   rpc CreateNewBookmarkCollectionEntry(NewBookmarkCollectionsEntryRequest)
       returns (GetBookmarkCollectionsEntryResponse);
-  rpc GetBookmarkCollectionsEntry(GetBookmarkCollectionsEntryRequest)
+  rpc GetBookmarkCollectionEntry(GetBookmarkCollectionsEntryRequest)
       returns (GetBookmarkCollectionsEntryResponse);
-  rpc UpdateBookmarkCollectionsEntry(UpdateBookmarkCollectionsEntryRequest)
+  rpc UpdateBookmarkCollectionEntry(UpdateBookmarkCollectionsEntryRequest)
       returns (GetBookmarkCollectionsEntryResponse);
-  rpc DeleteBookmarkCollectionsEntry(UpdateBookmarkCollectionsEntryRequest)
+  rpc DeleteBookmarkCollectionEntry(UpdateBookmarkCollectionsEntryRequest)
       returns (DeleteBookmarkCollectionsEntryResponse);
 }
 

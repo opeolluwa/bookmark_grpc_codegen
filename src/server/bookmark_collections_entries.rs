@@ -80,21 +80,21 @@ pub mod bookmark_collections_entries_manager_server {
             tonic::Response<super::GetBookmarkCollectionsEntryResponse>,
             tonic::Status,
         >;
-        async fn get_bookmark_collections_entry(
+        async fn get_bookmark_collection_entry(
             &self,
             request: tonic::Request<super::GetBookmarkCollectionsEntryRequest>,
         ) -> std::result::Result<
             tonic::Response<super::GetBookmarkCollectionsEntryResponse>,
             tonic::Status,
         >;
-        async fn update_bookmark_collections_entry(
+        async fn update_bookmark_collection_entry(
             &self,
             request: tonic::Request<super::UpdateBookmarkCollectionsEntryRequest>,
         ) -> std::result::Result<
             tonic::Response<super::GetBookmarkCollectionsEntryResponse>,
             tonic::Status,
         >;
-        async fn delete_bookmark_collections_entry(
+        async fn delete_bookmark_collection_entry(
             &self,
             request: tonic::Request<super::UpdateBookmarkCollectionsEntryRequest>,
         ) -> std::result::Result<
@@ -235,9 +235,9 @@ pub mod bookmark_collections_entries_manager_server {
                     };
                     Box::pin(fut)
                 }
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/GetBookmarkCollectionsEntry" => {
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/GetBookmarkCollectionEntry" => {
                     #[allow(non_camel_case_types)]
-                    struct GetBookmarkCollectionsEntrySvc<
+                    struct GetBookmarkCollectionEntrySvc<
                         T: BookmarkCollectionsEntriesManager,
                     >(
                         pub Arc<T>,
@@ -246,7 +246,7 @@ pub mod bookmark_collections_entries_manager_server {
                         T: BookmarkCollectionsEntriesManager,
                     > tonic::server::UnaryService<
                         super::GetBookmarkCollectionsEntryRequest,
-                    > for GetBookmarkCollectionsEntrySvc<T> {
+                    > for GetBookmarkCollectionEntrySvc<T> {
                         type Response = super::GetBookmarkCollectionsEntryResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -260,7 +260,7 @@ pub mod bookmark_collections_entries_manager_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as BookmarkCollectionsEntriesManager>::get_bookmark_collections_entry(
+                                <T as BookmarkCollectionsEntriesManager>::get_bookmark_collection_entry(
                                         &inner,
                                         request,
                                     )
@@ -275,7 +275,7 @@ pub mod bookmark_collections_entries_manager_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = GetBookmarkCollectionsEntrySvc(inner);
+                        let method = GetBookmarkCollectionEntrySvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -291,9 +291,9 @@ pub mod bookmark_collections_entries_manager_server {
                     };
                     Box::pin(fut)
                 }
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/UpdateBookmarkCollectionsEntry" => {
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/UpdateBookmarkCollectionEntry" => {
                     #[allow(non_camel_case_types)]
-                    struct UpdateBookmarkCollectionsEntrySvc<
+                    struct UpdateBookmarkCollectionEntrySvc<
                         T: BookmarkCollectionsEntriesManager,
                     >(
                         pub Arc<T>,
@@ -302,7 +302,7 @@ pub mod bookmark_collections_entries_manager_server {
                         T: BookmarkCollectionsEntriesManager,
                     > tonic::server::UnaryService<
                         super::UpdateBookmarkCollectionsEntryRequest,
-                    > for UpdateBookmarkCollectionsEntrySvc<T> {
+                    > for UpdateBookmarkCollectionEntrySvc<T> {
                         type Response = super::GetBookmarkCollectionsEntryResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -316,7 +316,7 @@ pub mod bookmark_collections_entries_manager_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as BookmarkCollectionsEntriesManager>::update_bookmark_collections_entry(
+                                <T as BookmarkCollectionsEntriesManager>::update_bookmark_collection_entry(
                                         &inner,
                                         request,
                                     )
@@ -331,7 +331,7 @@ pub mod bookmark_collections_entries_manager_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = UpdateBookmarkCollectionsEntrySvc(inner);
+                        let method = UpdateBookmarkCollectionEntrySvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -347,9 +347,9 @@ pub mod bookmark_collections_entries_manager_server {
                     };
                     Box::pin(fut)
                 }
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/DeleteBookmarkCollectionsEntry" => {
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/DeleteBookmarkCollectionEntry" => {
                     #[allow(non_camel_case_types)]
-                    struct DeleteBookmarkCollectionsEntrySvc<
+                    struct DeleteBookmarkCollectionEntrySvc<
                         T: BookmarkCollectionsEntriesManager,
                     >(
                         pub Arc<T>,
@@ -358,7 +358,7 @@ pub mod bookmark_collections_entries_manager_server {
                         T: BookmarkCollectionsEntriesManager,
                     > tonic::server::UnaryService<
                         super::UpdateBookmarkCollectionsEntryRequest,
-                    > for DeleteBookmarkCollectionsEntrySvc<T> {
+                    > for DeleteBookmarkCollectionEntrySvc<T> {
                         type Response = super::DeleteBookmarkCollectionsEntryResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -372,7 +372,7 @@ pub mod bookmark_collections_entries_manager_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as BookmarkCollectionsEntriesManager>::delete_bookmark_collections_entry(
+                                <T as BookmarkCollectionsEntriesManager>::delete_bookmark_collection_entry(
                                         &inner,
                                         request,
                                     )
@@ -387,7 +387,7 @@ pub mod bookmark_collections_entries_manager_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = DeleteBookmarkCollectionsEntrySvc(inner);
+                        let method = DeleteBookmarkCollectionEntrySvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
