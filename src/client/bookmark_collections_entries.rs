@@ -192,7 +192,7 @@ pub mod bookmark_collections_entries_manager_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn get_bookmark_collections_entry(
+        pub async fn get_bookmark_collection_entry(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBookmarkCollectionsEntryRequest>,
         ) -> std::result::Result<
@@ -209,19 +209,19 @@ pub mod bookmark_collections_entries_manager_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/GetBookmarkCollectionsEntry",
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/GetBookmarkCollectionEntry",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "bookmark_collections_entries.BookmarkCollectionsEntriesManager",
-                        "GetBookmarkCollectionsEntry",
+                        "GetBookmarkCollectionEntry",
                     ),
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn update_bookmark_collections_entry(
+        pub async fn update_bookmark_collection_entry(
             &mut self,
             request: impl tonic::IntoRequest<
                 super::UpdateBookmarkCollectionsEntryRequest,
@@ -240,19 +240,19 @@ pub mod bookmark_collections_entries_manager_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/UpdateBookmarkCollectionsEntry",
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/UpdateBookmarkCollectionEntry",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "bookmark_collections_entries.BookmarkCollectionsEntriesManager",
-                        "UpdateBookmarkCollectionsEntry",
+                        "UpdateBookmarkCollectionEntry",
                     ),
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn delete_bookmark_collections_entry(
+        pub async fn delete_bookmark_collection_entry(
             &mut self,
             request: impl tonic::IntoRequest<
                 super::UpdateBookmarkCollectionsEntryRequest,
@@ -271,14 +271,14 @@ pub mod bookmark_collections_entries_manager_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/DeleteBookmarkCollectionsEntry",
+                "/bookmark_collections_entries.BookmarkCollectionsEntriesManager/DeleteBookmarkCollectionEntry",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "bookmark_collections_entries.BookmarkCollectionsEntriesManager",
-                        "DeleteBookmarkCollectionsEntry",
+                        "DeleteBookmarkCollectionEntry",
                     ),
                 );
             self.inner.unary(req, path, codec).await

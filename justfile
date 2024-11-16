@@ -35,3 +35,10 @@ compile_for_all_client:
     just compile_for_ts_client
     just generate_attributes
     just generate_ts_exports
+
+
+tag tag:
+    git add .
+    git commit -m "tag({{tag}})"
+    git tag -a {{tag}} -m "new tag"
+    git push origin {{tag}}
