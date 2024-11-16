@@ -24,39 +24,39 @@ pub struct GetBookmarkCollectionsEntryResponse {
     #[prost(string, tag = "4")]
     pub updated_at: ::prost::alloc::string::String,
     #[prost(string, tag = "5")]
-    pub bookmark_collections_id: ::prost::alloc::string::String,
+    pub collection_id: ::prost::alloc::string::String,
     #[prost(map = "string, string", tag = "6")]
     pub more_fields: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
     #[prost(string, tag = "8")]
-    pub bookmark_collections_entry_id: ::prost::alloc::string::String,
+    pub entry_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetBookmarkCollectionsEntryRequest {
     #[prost(string, tag = "1")]
-    pub bookmark_collection_id: ::prost::alloc::string::String,
+    pub collection_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
-    pub bookmark_collection_entry_id: ::prost::alloc::string::String,
+    pub entry_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateBookmarkCollectionsEntryRequest {
     #[prost(string, tag = "1")]
-    pub bookmark_collection_id: ::prost::alloc::string::String,
+    pub collection_id: ::prost::alloc::string::String,
     #[prost(string, optional, tag = "2")]
     pub title: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, tag = "4")]
-    pub bookmark_collection_entry_id: ::prost::alloc::string::String,
+    pub entry_id: ::prost::alloc::string::String,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteBookmarkCollectionsEntryResponse {
     #[prost(string, tag = "1")]
-    pub bookmark_collection_id: ::prost::alloc::string::String,
+    pub collection_id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
-    pub bookmark_collection_entry_id: ::prost::alloc::string::String,
+    pub entry_id: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub status: ::prost::alloc::string::String,
 }
