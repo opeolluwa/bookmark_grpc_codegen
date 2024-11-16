@@ -39,6 +39,8 @@ pub struct SignUpResponse {
     #[prost(enumeration = "Status", tag = "2")]
     pub status: i32,
 }
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum Status {

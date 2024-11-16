@@ -1,7 +1,0 @@
-{
-  "vaultId": "0b913ca5-f5f7-41aa-b563-cfab932d3196",
-  "vaultEntryId": "{{ faker.random.uuid }}",
-
-  "page": 571,
-  "pageSize": 342
-}

@@ -1,6 +1,6 @@
 [package]
-name = "vault_grpc"
-version = "0.7.0"
+name = "bookmark_grpc_codegen"
+version = "0.8.0"
 edition = "2021"
 
 [dependencies]

@@ -29,3 +29,9 @@ compile_for_rs_client:
 compile target:
     @just compile_for_{{target}}_client
 
+
+compile_for_all_client:
+    just compile_for_rs_client
+    just compile_for_ts_client
+    just generate_attributes
+    just generate_ts_exports

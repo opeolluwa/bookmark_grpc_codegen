@@ -8,6 +8,8 @@ pub struct ErrorResponse {
     #[prost(string, tag = "2")]
     pub message: ::prost::alloc::string::String,
 }
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum RequestStatus {
