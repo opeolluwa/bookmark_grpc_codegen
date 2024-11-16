@@ -37,6 +37,7 @@ compile_for_all_client:
     just generate_ts_exports
 
 
+[doc('tag')]
 tag tag:
     git add .
     git commit -m "tag({{tag}})"
