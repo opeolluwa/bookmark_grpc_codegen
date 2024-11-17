@@ -1,34 +1,13 @@
-# justfile
-
-# generate typescript bindings for the rust structs 
-generate_ts_exports:
-    #!/bin/bash
-    cargo test
-    echo "// Auto-generated index.ts" > bindings/index.ts
-    cd bindings
-    for file in *.ts; do
-        if [[ "$file" != "index.ts" ]]; then
-            filename="${file%.ts}"
-            echo "export * from './${filename}';" >> index.ts
-        fi
-    done
-    echo "All TypeScript files have been imported and re-exported in index.ts."
-
-
-## compile the protofiles for web client 
-compile_for_ts_client:
-    #!/bin/bash
-    protoc -I=. proto/*.proto \
-    --js_out=import_style=commonjs:grpc_web \
-    --grpc-web_out=import_style=typescript,mode=grpcwebtext:grpc_web \
-
-
+[doc('compile proto and generate TS bindings')]
 compile:
     #!/bin/bash
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+
     # clear all existing files 
-    rm -rf protogen/*
+    # rm -rf protogen/*
     # Supported target languages
-    for target in cpp kotlin go 
+    for target in cpp kotlin go python
     do 
         echo "Compiling $target..."
 
@@ -39,25 +18,20 @@ compile:
     protoc -I=./proto --${target}_out=./protogen/$target ./proto/*.proto 
     done
 
+    ## compile for the API gateway targeting nestjs  
+    protoc --plugin=$(npm root)/.bin/protoc-gen-ts_proto \
+    --ts_proto_out=protogen/nodejs \
+     --ts_proto_opt=outputServices=grpc-js \
+    --ts_proto_opt=esModuleInterop=true \
+     -I=./proto  ./proto/*.proto 
+
+
     #compile rust 
     cargo build
 
-    ## genetate typescript bindings for rust implementation
-    cargo test
-    echo "// Auto-generated index.ts" > bindings/index.ts
-    cd bindings
-    for file in *.ts; do
-        if [[ "$file" != "index.ts" ]]; then
-            filename="${file%.ts}"
-            echo "export * from './${filename}';" >> index.ts
-        fi
-    done
-    echo "All TypeScript files have been imported and re-exported in index.ts."
-
-
 [doc('tag')]
-tag tag:
+tag tag message:
     git add .
-    git commit -m "tag({{tag}})"
-    git tag -a {{tag}} -m "new tag"
+    git commit -m "published a new tag -> ({{tag}})"
+    git tag -a {{tag}} -m "{{message}}"
     git push origin {{tag}}
