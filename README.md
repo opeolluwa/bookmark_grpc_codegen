@@ -4,8 +4,7 @@
 - [Getting Started](#getting-started)
   - [Dependencies](#dependencies)
   - [Installing](#installing)
-  - [Executing program](#executing-program)
-- [Documentation](#documentation)
+  - [Usage](#usage)
 
 ## Description
 
@@ -15,44 +14,35 @@ Mobile vault gRPC protobuf files and the generated code
 
 ### Dependencies
 
-[Rust](https://rust-lang.org) [NodeJs](https://nodejs.org)
-[Protobuf](https://github.com/protocolbuffers/protobuf/releases)
-[protoc-gen-grpc-web](https://github.com/grpc/grpc-web?tab=readme-ov-file)
-[Gp proto gen]()
+- [Rust](https://rust-lang.org)
+- [NodeJs](https://nodejs.org)
+- [Protobuf](https://github.com/protocolbuffers/protobuf/releases)
+- [protoc-gen-grpc-web](https://github.com/grpc/grpc-web?tab=readme-ov-file)
+- [Golang proto gen]()
 
 ### Installing
 
-1. install protobuf
+To install the languages toolchain, execute
 
 ```sh
-brew install protobuf
+just prepare
 ```
 
-2. Install Protobuf-javascript (protoc-gen-js)
+4. Install
 
-```sh
-npm install -g protoc-gen-js
-```
-
-3. Install gRPC-Web Code Generator
-
-```sh
-sudo mv protoc-gen-grpc-web-1.5.0-darwin-aarch64 \
-    /usr/local/bin/protoc-gen-grpc-web
-
-chmod +x /usr/local/bin/protoc-gen-grpc-web
-```
-4. Install 
 ## Usage
+
+The package is not distributed on package manager, like, crates.io, npm but can
+be added as a git dependency
 
 ### Use in a Typescript project
 
 ```sh
-npm i git://github.com/opeolluwa/vault_grpc#v0.7.5
+npm i git://github.com/opeolluwa/vault_grpc#v<TAG>
 ```
 
 ### Use in a Rust project
 
 ```shell
-cargo add --tag v0.8.4 --git https://github.com/opeolluwa/bookmark_grpc_codegen --no-default-features  -F server 
+cargo add --tag v<Tag> --git https://github.com/opeolluwa/bookmark_grpc_codegen --no-default-features  -F server
 ```
