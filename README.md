@@ -17,7 +17,8 @@ Mobile vault gRPC protobuf files and the generated code
 
 [Rust](https://rust-lang.org) [NodeJs](https://nodejs.org)
 [Protobuf](https://github.com/protocolbuffers/protobuf/releases)
-[rotoc-gen-grpc-web](https://github.com/grpc/grpc-web?tab=readme-ov-file)
+[protoc-gen-grpc-web](https://github.com/grpc/grpc-web?tab=readme-ov-file)
+[Gp proto gen]()
 
 ### Installing
 
@@ -41,7 +42,7 @@ sudo mv protoc-gen-grpc-web-1.5.0-darwin-aarch64 \
 
 chmod +x /usr/local/bin/protoc-gen-grpc-web
 ```
-
+4. Install 
 ## Usage
 
 ### Use in a Typescript project
@@ -53,5 +54,5 @@ npm i git://github.com/opeolluwa/vault_grpc#v0.7.5
 ### Use in a Rust project
 
 ```shell
-cargo add --git https://gihub.com/opeolluwa/vault_grpc
+cargo add --tag v0.8.4 --git https://github.com/opeolluwa/bookmark_grpc_codegen --no-default-features  -F server 
 ```
