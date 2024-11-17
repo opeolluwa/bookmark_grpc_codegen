@@ -1,8 +1,10 @@
 syntax = "proto3";
 
+option go_package = "bookmarks/grpc/codegen/bookmark_collection_entries";
+
 package bookmark_collections_entries;
 
-// import "google/protobuf/timestamp.proto";
+
 
 service BookmarkCollectionsEntriesManager {
   rpc CreateNewBookmarkCollectionEntry(NewBookmarkCollectionsEntryRequest)

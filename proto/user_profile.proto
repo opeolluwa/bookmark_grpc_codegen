@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "bookmarks/grpc/codegen/user_profile";
+
 package user_profile;
 
 service UserProfile {
