@@ -1,4 +1,4 @@
-# # Mobile Vault gRPC codegen
+#  Bookmark gRPC codegen
 
 - [Description](#description)
 - [Getting Started](#getting-started)
@@ -8,7 +8,7 @@
 
 ## Description
 
-Mobile vault gRPC protobuf files and the generated code
+Bookmark gRPC protobuf files and the generated code
 
 ## Getting Started
 
