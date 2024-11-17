@@ -1,8 +1,10 @@
 syntax = "proto3";
 
+option go_package = "bookmarks/grpc/codegen/bookmark_collection_entries";
+
 package bookmark_collections_entries;
 
-// import "google/protobuf/timestamp.proto";
+
 
 service BookmarkCollectionsEntriesManager {
   rpc CreateNewBookmarkCollectionEntry(NewBookmarkCollectionsEntryRequest)
@@ -27,25 +29,25 @@ message GetBookmarkCollectionsEntryResponse {
   string description = 2;
   string created_at = 3;
   string updated_at = 4;
-  string bookmark_collection_id = 5;
+  string collection_id = 5;
   map<string, string> more_fields = 6;
-  string bookmark_collections_entry_id = 8;
+  string entry_id = 8;
 }
 
 message GetBookmarkCollectionsEntryRequest {
-  string bookmark_collection_id = 1;
-  string bookmark_collection_entry_id = 2;
+  string collection_id = 1;
+  string entry_id = 2;
 }
 
 message UpdateBookmarkCollectionsEntryRequest {
-  string bookmark_collection_id = 1;
+  string collection_id = 1;
   optional string title = 2;
   optional string description = 3;
-  string bookmark_collection_entry_id = 4;
+  string entry_id = 4;
 }
 
 message DeleteBookmarkCollectionsEntryResponse {
-  string bookmark_collection_id = 1;
-  string bookmark_collection_entry_id = 2;
+  string collection_id = 1;
+  string entry_id = 2;
   string status = 4;
 }
