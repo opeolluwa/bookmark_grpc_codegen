@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "bookmarks/grpc/codegen/activity";
+
 package activity_log;
 
 service ActivityLog {
