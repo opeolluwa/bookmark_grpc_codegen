@@ -9,3 +9,7 @@ justfile
 
 protogen/*
 !protogen/nodejs
+
+go.*
+*.rs 
+*.go 
