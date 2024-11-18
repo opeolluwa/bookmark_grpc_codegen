@@ -2,7 +2,12 @@
   "name": "bookmark_grpc_codegen",
   "version": "1.0.0",
   "description": "\"Typescript files for vault grpc \"",
-  "main": "protogen/nodejs/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup"
   },
