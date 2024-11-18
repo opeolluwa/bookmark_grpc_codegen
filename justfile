@@ -39,12 +39,12 @@ tag tag message:
 
 publish:
     #!/bin/bash
-    echo "// Auto-generated index.ts" > protogen/nodejs/index.ts
+    echo "// Auto-generated mod.ts" > protogen/nodejs/mod.ts
     cd protogen/nodejs
     for file in *.ts; do
-        if [[ "$file" != "index.ts" ]]; then
+        if [[ "$file" != "mod.ts" ]]; then
             filename="${file%.ts}"
-            echo "export * as ${filename} from './${filename}';" >> index.ts
+            echo "export * as ${filename} from './${filename}';" >> mod.ts
         fi
     done
     echo "All TypeScript files have been imported and re-exported in index.ts."

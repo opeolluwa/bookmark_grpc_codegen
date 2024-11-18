@@ -1,4 +1,4 @@
-// Auto-generated index.ts
+// Auto-generated mod.ts
 export * as activity from './activity';
 export * as authentication from './authentication';
 export * as bookmark_collection_entries from './bookmark_collection_entries';

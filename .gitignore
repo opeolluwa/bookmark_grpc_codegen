@@ -161,3 +161,4 @@ proto/vault_grpc_api_test
 go.work
 
 example 
+dist
