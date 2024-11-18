@@ -1,7 +1,12 @@
 .idea
 dist 
-proto 
 src
 Cargo*
 .rs
 justfile
+
+
+
+
+protogen/*
+!protogen/nodejs
