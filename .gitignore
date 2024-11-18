@@ -90,10 +90,10 @@ web_modules/
 # Next.js build output
 .next
 out
-
+dist
 # Nuxt.js build / generate output
 .nuxt
-dist
+
 
 # Gatsby files
 .cache/
@@ -159,3 +159,5 @@ proto/vault_grpc_api_test
 
 # Go workspace file
 go.work
+
+example 

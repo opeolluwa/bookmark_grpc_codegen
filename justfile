@@ -35,3 +35,16 @@ tag tag message:
     git commit -m "published a new tag -> ({{tag}})"
     git tag -a {{tag}} -m "{{message}}"
     git push origin {{tag}}
+
+
+publish:
+    #!/bin/bash
+    echo "// Auto-generated index.ts" > protogen/nodejs/index.ts
+    cd protogen/nodejs
+    for file in *.ts; do
+        if [[ "$file" != "index.ts" ]]; then
+            filename="${file%.ts}"
+            echo "export * as ${filename} from './${filename}';" >> index.ts
+        fi
+    done
+    echo "All TypeScript files have been imported and re-exported in index.ts."
