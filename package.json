@@ -9,8 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "postinstall": "npm run build"
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
