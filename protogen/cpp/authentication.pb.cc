@@ -89,6 +89,64 @@ struct SignUpRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SignUpRequestDefaultTypeInternal _SignUpRequest_default_instance_;
 
+inline constexpr SetNewPasswordResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        status_{static_cast< ::authentication::Status >(0)},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetNewPasswordResponse::SetNewPasswordResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct SetNewPasswordResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetNewPasswordResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetNewPasswordResponseDefaultTypeInternal() {}
+  union {
+    SetNewPasswordResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetNewPasswordResponseDefaultTypeInternal _SetNewPasswordResponse_default_instance_;
+
+inline constexpr SetNewPasswordRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : password_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        confirm_password_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SetNewPasswordRequest::SetNewPasswordRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct SetNewPasswordRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetNewPasswordRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetNewPasswordRequestDefaultTypeInternal() {}
+  union {
+    SetNewPasswordRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetNewPasswordRequestDefaultTypeInternal _SetNewPasswordRequest_default_instance_;
+
 inline constexpr LoginResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : token_(
@@ -148,6 +206,61 @@ struct LoginRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LoginRequestDefaultTypeInternal _LoginRequest_default_instance_;
+
+inline constexpr ForgottenPasswordResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        status_{static_cast< ::authentication::Status >(0)},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ForgottenPasswordResponse::ForgottenPasswordResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ForgottenPasswordResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ForgottenPasswordResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ForgottenPasswordResponseDefaultTypeInternal() {}
+  union {
+    ForgottenPasswordResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ForgottenPasswordResponseDefaultTypeInternal _ForgottenPasswordResponse_default_instance_;
+
+inline constexpr ForgottenPasswordRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : email_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ForgottenPasswordRequest::ForgottenPasswordRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ForgottenPasswordRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ForgottenPasswordRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ForgottenPasswordRequestDefaultTypeInternal() {}
+  union {
+    ForgottenPasswordRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ForgottenPasswordRequestDefaultTypeInternal _ForgottenPasswordRequest_default_instance_;
 }  // namespace authentication
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_authentication_2eproto[1];
 static constexpr const ::_pb::ServiceDescriptor**
@@ -197,6 +310,45 @@ const ::uint32_t
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::authentication::SignUpResponse, _impl_.message_),
         PROTOBUF_FIELD_OFFSET(::authentication::SignUpResponse, _impl_.status_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::authentication::ForgottenPasswordRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::authentication::ForgottenPasswordRequest, _impl_.email_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::authentication::ForgottenPasswordResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::authentication::ForgottenPasswordResponse, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::authentication::ForgottenPasswordResponse, _impl_.message_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordRequest, _impl_.password_),
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordRequest, _impl_.confirm_password_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordResponse, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::authentication::SetNewPasswordResponse, _impl_.message_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -205,12 +357,20 @@ static const ::_pbi::MigrationSchema
         {10, -1, -1, sizeof(::authentication::LoginResponse)},
         {20, -1, -1, sizeof(::authentication::SignUpRequest)},
         {32, -1, -1, sizeof(::authentication::SignUpResponse)},
+        {42, -1, -1, sizeof(::authentication::ForgottenPasswordRequest)},
+        {51, -1, -1, sizeof(::authentication::ForgottenPasswordResponse)},
+        {61, -1, -1, sizeof(::authentication::SetNewPasswordRequest)},
+        {71, -1, -1, sizeof(::authentication::SetNewPasswordResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::authentication::_LoginRequest_default_instance_._instance,
     &::authentication::_LoginResponse_default_instance_._instance,
     &::authentication::_SignUpRequest_default_instance_._instance,
     &::authentication::_SignUpResponse_default_instance_._instance,
+    &::authentication::_ForgottenPasswordRequest_default_instance_._instance,
+    &::authentication::_ForgottenPasswordResponse_default_instance_._instance,
+    &::authentication::_SetNewPasswordRequest_default_instance_._instance,
+    &::authentication::_SetNewPasswordResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_authentication_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -221,25 +381,37 @@ const char descriptor_table_protodef_authentication_2eproto[] ABSL_ATTRIBUTE_SEC
     "il\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\022\n\nfirst_name"
     "\030\003 \001(\t\022\021\n\tlast_name\030\004 \001(\t\"I\n\016SignUpRespo"
     "nse\022\017\n\007message\030\001 \001(\t\022&\n\006status\030\002 \001(\0162\026.a"
-    "uthentication.Status*\031\n\006Status\022\006\n\002Ok\020\000\022\007"
-    "\n\003Bad\020\0012\237\001\n\016Authentication\022G\n\006SignUp\022\035.a"
-    "uthentication.SignUpRequest\032\036.authentica"
-    "tion.SignUpResponse\022D\n\005Login\022\034.authentic"
-    "ation.LoginRequest\032\035.authentication.Logi"
-    "nResponseB\'Z%bookmarks/grpc/codegen/auth"
-    "enticationb\006proto3"
+    "uthentication.Status\")\n\030ForgottenPasswor"
+    "dRequest\022\r\n\005email\030\001 \001(\t\"T\n\031ForgottenPass"
+    "wordResponse\022&\n\006status\030\001 \001(\0162\026.authentic"
+    "ation.Status\022\017\n\007message\030\002 \001(\t\"C\n\025SetNewP"
+    "asswordRequest\022\020\n\010password\030\001 \001(\t\022\030\n\020conf"
+    "irm_password\030\002 \001(\t\"Q\n\026SetNewPasswordResp"
+    "onse\022&\n\006status\030\001 \001(\0162\026.authentication.St"
+    "atus\022\017\n\007message\030\002 \001(\t*\031\n\006Status\022\006\n\002Ok\020\000\022"
+    "\007\n\003Bad\020\0012\352\002\n\016Authentication\022G\n\006SignUp\022\035."
+    "authentication.SignUpRequest\032\036.authentic"
+    "ation.SignUpResponse\022D\n\005Login\022\034.authenti"
+    "cation.LoginRequest\032\035.authentication.Log"
+    "inResponse\022h\n\021ForgottenPassword\022(.authen"
+    "tication.ForgottenPasswordRequest\032).auth"
+    "entication.ForgottenPasswordResponse\022_\n\016"
+    "SetNewPassword\022%.authentication.SetNewPa"
+    "sswordRequest\032&.authentication.SetNewPas"
+    "swordResponseB\'Z%bookmarks/grpc/codegen/"
+    "authenticationb\006proto3"
 };
 static ::absl::once_flag descriptor_table_authentication_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_authentication_2eproto = {
     false,
     false,
-    538,
+    1022,
     descriptor_table_protodef_authentication_2eproto,
     "authentication.proto",
     &descriptor_table_authentication_2eproto_once,
     nullptr,
     0,
-    4,
+    8,
     schemas,
     file_default_instances,
     TableStruct_authentication_2eproto::offsets,
@@ -1315,6 +1487,979 @@ void SignUpResponse::InternalSwap(SignUpResponse* PROTOBUF_RESTRICT other) {
 }
 
 ::google::protobuf::Metadata SignUpResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ForgottenPasswordRequest::_Internal {
+ public:
+};
+
+ForgottenPasswordRequest::ForgottenPasswordRequest(::google::protobuf::Arena* arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:authentication.ForgottenPasswordRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE ForgottenPasswordRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::authentication::ForgottenPasswordRequest& from_msg)
+      : email_(arena, from.email_),
+        _cached_size_{0} {}
+
+ForgottenPasswordRequest::ForgottenPasswordRequest(
+    ::google::protobuf::Arena* arena,
+    const ForgottenPasswordRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ForgottenPasswordRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:authentication.ForgottenPasswordRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE ForgottenPasswordRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : email_(arena),
+        _cached_size_{0} {}
+
+inline void ForgottenPasswordRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ForgottenPasswordRequest::~ForgottenPasswordRequest() {
+  // @@protoc_insertion_point(destructor:authentication.ForgottenPasswordRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void ForgottenPasswordRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.email_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::google::protobuf::MessageLite::ClassDataFull
+    ForgottenPasswordRequest::_class_data_ = {
+        ::google::protobuf::Message::ClassData{
+            &_ForgottenPasswordRequest_default_instance_._instance,
+            &_table_.header,
+            nullptr,  // OnDemandRegisterArenaDtor
+            nullptr,  // IsInitialized
+            &ForgottenPasswordRequest::MergeImpl,
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+            ::google::protobuf::Message::GetDeleteImpl<ForgottenPasswordRequest>(),
+            ::google::protobuf::Message::GetNewImpl<ForgottenPasswordRequest>(),
+            ::google::protobuf::Message::GetClearImpl<ForgottenPasswordRequest>(), &ForgottenPasswordRequest::ByteSizeLong,
+                &ForgottenPasswordRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+            PROTOBUF_FIELD_OFFSET(ForgottenPasswordRequest, _impl_._cached_size_),
+            false,
+        },
+        &ForgottenPasswordRequest::kDescriptorMethods,
+        &descriptor_table_authentication_2eproto,
+        nullptr,  // tracker
+};
+const ::google::protobuf::MessageLite::ClassData* ForgottenPasswordRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
+  return _class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 53, 2> ForgottenPasswordRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    _class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::authentication::ForgottenPasswordRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string email = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ForgottenPasswordRequest, _impl_.email_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string email = 1;
+    {PROTOBUF_FIELD_OFFSET(ForgottenPasswordRequest, _impl_.email_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\47\5\0\0\0\0\0\0"
+    "authentication.ForgottenPasswordRequest"
+    "email"
+  }},
+};
+
+PROTOBUF_NOINLINE void ForgottenPasswordRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:authentication.ForgottenPasswordRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.email_.ClearToEmpty();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::uint8_t* ForgottenPasswordRequest::_InternalSerialize(
+            const MessageLite& base, ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) {
+          const ForgottenPasswordRequest& this_ = static_cast<const ForgottenPasswordRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::uint8_t* ForgottenPasswordRequest::_InternalSerialize(
+            ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+          const ForgottenPasswordRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(serialize_to_array_start:authentication.ForgottenPasswordRequest)
+          ::uint32_t cached_has_bits = 0;
+          (void)cached_has_bits;
+
+          // string email = 1;
+          if (!this_._internal_email().empty()) {
+            const std::string& _s = this_._internal_email();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "authentication.ForgottenPasswordRequest.email");
+            target = stream->WriteStringMaybeAliased(1, _s, target);
+          }
+
+          if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+            target =
+                ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+                    this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+          }
+          // @@protoc_insertion_point(serialize_to_array_end:authentication.ForgottenPasswordRequest)
+          return target;
+        }
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::size_t ForgottenPasswordRequest::ByteSizeLong(const MessageLite& base) {
+          const ForgottenPasswordRequest& this_ = static_cast<const ForgottenPasswordRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::size_t ForgottenPasswordRequest::ByteSizeLong() const {
+          const ForgottenPasswordRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(message_byte_size_start:authentication.ForgottenPasswordRequest)
+          ::size_t total_size = 0;
+
+          ::uint32_t cached_has_bits = 0;
+          // Prevent compiler warnings about cached_has_bits being unused
+          (void)cached_has_bits;
+
+           {
+            // string email = 1;
+            if (!this_._internal_email().empty()) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_email());
+            }
+          }
+          return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                                     &this_._impl_._cached_size_);
+        }
+
+void ForgottenPasswordRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ForgottenPasswordRequest*>(&to_msg);
+  auto& from = static_cast<const ForgottenPasswordRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:authentication.ForgottenPasswordRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_email().empty()) {
+    _this->_internal_set_email(from._internal_email());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ForgottenPasswordRequest::CopyFrom(const ForgottenPasswordRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:authentication.ForgottenPasswordRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ForgottenPasswordRequest::InternalSwap(ForgottenPasswordRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.email_, &other->_impl_.email_, arena);
+}
+
+::google::protobuf::Metadata ForgottenPasswordRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ForgottenPasswordResponse::_Internal {
+ public:
+};
+
+ForgottenPasswordResponse::ForgottenPasswordResponse(::google::protobuf::Arena* arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:authentication.ForgottenPasswordResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE ForgottenPasswordResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::authentication::ForgottenPasswordResponse& from_msg)
+      : message_(arena, from.message_),
+        _cached_size_{0} {}
+
+ForgottenPasswordResponse::ForgottenPasswordResponse(
+    ::google::protobuf::Arena* arena,
+    const ForgottenPasswordResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ForgottenPasswordResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.status_ = from._impl_.status_;
+
+  // @@protoc_insertion_point(copy_constructor:authentication.ForgottenPasswordResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE ForgottenPasswordResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : message_(arena),
+        _cached_size_{0} {}
+
+inline void ForgottenPasswordResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.status_ = {};
+}
+ForgottenPasswordResponse::~ForgottenPasswordResponse() {
+  // @@protoc_insertion_point(destructor:authentication.ForgottenPasswordResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void ForgottenPasswordResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.message_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::google::protobuf::MessageLite::ClassDataFull
+    ForgottenPasswordResponse::_class_data_ = {
+        ::google::protobuf::Message::ClassData{
+            &_ForgottenPasswordResponse_default_instance_._instance,
+            &_table_.header,
+            nullptr,  // OnDemandRegisterArenaDtor
+            nullptr,  // IsInitialized
+            &ForgottenPasswordResponse::MergeImpl,
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+            ::google::protobuf::Message::GetDeleteImpl<ForgottenPasswordResponse>(),
+            ::google::protobuf::Message::GetNewImpl<ForgottenPasswordResponse>(),
+            ::google::protobuf::Message::GetClearImpl<ForgottenPasswordResponse>(), &ForgottenPasswordResponse::ByteSizeLong,
+                &ForgottenPasswordResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+            PROTOBUF_FIELD_OFFSET(ForgottenPasswordResponse, _impl_._cached_size_),
+            false,
+        },
+        &ForgottenPasswordResponse::kDescriptorMethods,
+        &descriptor_table_authentication_2eproto,
+        nullptr,  // tracker
+};
+const ::google::protobuf::MessageLite::ClassData* ForgottenPasswordResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
+  return _class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 56, 2> ForgottenPasswordResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    _class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::authentication::ForgottenPasswordResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string message = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(ForgottenPasswordResponse, _impl_.message_)}},
+    // .authentication.Status status = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ForgottenPasswordResponse, _impl_.status_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(ForgottenPasswordResponse, _impl_.status_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .authentication.Status status = 1;
+    {PROTOBUF_FIELD_OFFSET(ForgottenPasswordResponse, _impl_.status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string message = 2;
+    {PROTOBUF_FIELD_OFFSET(ForgottenPasswordResponse, _impl_.message_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\50\0\7\0\0\0\0\0"
+    "authentication.ForgottenPasswordResponse"
+    "message"
+  }},
+};
+
+PROTOBUF_NOINLINE void ForgottenPasswordResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:authentication.ForgottenPasswordResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.message_.ClearToEmpty();
+  _impl_.status_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::uint8_t* ForgottenPasswordResponse::_InternalSerialize(
+            const MessageLite& base, ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) {
+          const ForgottenPasswordResponse& this_ = static_cast<const ForgottenPasswordResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::uint8_t* ForgottenPasswordResponse::_InternalSerialize(
+            ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+          const ForgottenPasswordResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(serialize_to_array_start:authentication.ForgottenPasswordResponse)
+          ::uint32_t cached_has_bits = 0;
+          (void)cached_has_bits;
+
+          // .authentication.Status status = 1;
+          if (this_._internal_status() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteEnumToArray(
+                1, this_._internal_status(), target);
+          }
+
+          // string message = 2;
+          if (!this_._internal_message().empty()) {
+            const std::string& _s = this_._internal_message();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "authentication.ForgottenPasswordResponse.message");
+            target = stream->WriteStringMaybeAliased(2, _s, target);
+          }
+
+          if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+            target =
+                ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+                    this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+          }
+          // @@protoc_insertion_point(serialize_to_array_end:authentication.ForgottenPasswordResponse)
+          return target;
+        }
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::size_t ForgottenPasswordResponse::ByteSizeLong(const MessageLite& base) {
+          const ForgottenPasswordResponse& this_ = static_cast<const ForgottenPasswordResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::size_t ForgottenPasswordResponse::ByteSizeLong() const {
+          const ForgottenPasswordResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(message_byte_size_start:authentication.ForgottenPasswordResponse)
+          ::size_t total_size = 0;
+
+          ::uint32_t cached_has_bits = 0;
+          // Prevent compiler warnings about cached_has_bits being unused
+          (void)cached_has_bits;
+
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+           {
+            // string message = 2;
+            if (!this_._internal_message().empty()) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_message());
+            }
+            // .authentication.Status status = 1;
+            if (this_._internal_status() != 0) {
+              total_size += 1 +
+                            ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
+            }
+          }
+          return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                                     &this_._impl_._cached_size_);
+        }
+
+void ForgottenPasswordResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ForgottenPasswordResponse*>(&to_msg);
+  auto& from = static_cast<const ForgottenPasswordResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:authentication.ForgottenPasswordResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
+  }
+  if (from._internal_status() != 0) {
+    _this->_impl_.status_ = from._impl_.status_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ForgottenPasswordResponse::CopyFrom(const ForgottenPasswordResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:authentication.ForgottenPasswordResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ForgottenPasswordResponse::InternalSwap(ForgottenPasswordResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  swap(_impl_.status_, other->_impl_.status_);
+}
+
+::google::protobuf::Metadata ForgottenPasswordResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class SetNewPasswordRequest::_Internal {
+ public:
+};
+
+SetNewPasswordRequest::SetNewPasswordRequest(::google::protobuf::Arena* arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:authentication.SetNewPasswordRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE SetNewPasswordRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::authentication::SetNewPasswordRequest& from_msg)
+      : password_(arena, from.password_),
+        confirm_password_(arena, from.confirm_password_),
+        _cached_size_{0} {}
+
+SetNewPasswordRequest::SetNewPasswordRequest(
+    ::google::protobuf::Arena* arena,
+    const SetNewPasswordRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SetNewPasswordRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:authentication.SetNewPasswordRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE SetNewPasswordRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : password_(arena),
+        confirm_password_(arena),
+        _cached_size_{0} {}
+
+inline void SetNewPasswordRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+SetNewPasswordRequest::~SetNewPasswordRequest() {
+  // @@protoc_insertion_point(destructor:authentication.SetNewPasswordRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void SetNewPasswordRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.password_.Destroy();
+  _impl_.confirm_password_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::google::protobuf::MessageLite::ClassDataFull
+    SetNewPasswordRequest::_class_data_ = {
+        ::google::protobuf::Message::ClassData{
+            &_SetNewPasswordRequest_default_instance_._instance,
+            &_table_.header,
+            nullptr,  // OnDemandRegisterArenaDtor
+            nullptr,  // IsInitialized
+            &SetNewPasswordRequest::MergeImpl,
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+            ::google::protobuf::Message::GetDeleteImpl<SetNewPasswordRequest>(),
+            ::google::protobuf::Message::GetNewImpl<SetNewPasswordRequest>(),
+            ::google::protobuf::Message::GetClearImpl<SetNewPasswordRequest>(), &SetNewPasswordRequest::ByteSizeLong,
+                &SetNewPasswordRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+            PROTOBUF_FIELD_OFFSET(SetNewPasswordRequest, _impl_._cached_size_),
+            false,
+        },
+        &SetNewPasswordRequest::kDescriptorMethods,
+        &descriptor_table_authentication_2eproto,
+        nullptr,  // tracker
+};
+const ::google::protobuf::MessageLite::ClassData* SetNewPasswordRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
+  return _class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 69, 2> SetNewPasswordRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    _class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::authentication::SetNewPasswordRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string confirm_password = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SetNewPasswordRequest, _impl_.confirm_password_)}},
+    // string password = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(SetNewPasswordRequest, _impl_.password_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string password = 1;
+    {PROTOBUF_FIELD_OFFSET(SetNewPasswordRequest, _impl_.password_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string confirm_password = 2;
+    {PROTOBUF_FIELD_OFFSET(SetNewPasswordRequest, _impl_.confirm_password_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\44\10\20\0\0\0\0\0"
+    "authentication.SetNewPasswordRequest"
+    "password"
+    "confirm_password"
+  }},
+};
+
+PROTOBUF_NOINLINE void SetNewPasswordRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:authentication.SetNewPasswordRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.password_.ClearToEmpty();
+  _impl_.confirm_password_.ClearToEmpty();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::uint8_t* SetNewPasswordRequest::_InternalSerialize(
+            const MessageLite& base, ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) {
+          const SetNewPasswordRequest& this_ = static_cast<const SetNewPasswordRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::uint8_t* SetNewPasswordRequest::_InternalSerialize(
+            ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+          const SetNewPasswordRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(serialize_to_array_start:authentication.SetNewPasswordRequest)
+          ::uint32_t cached_has_bits = 0;
+          (void)cached_has_bits;
+
+          // string password = 1;
+          if (!this_._internal_password().empty()) {
+            const std::string& _s = this_._internal_password();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "authentication.SetNewPasswordRequest.password");
+            target = stream->WriteStringMaybeAliased(1, _s, target);
+          }
+
+          // string confirm_password = 2;
+          if (!this_._internal_confirm_password().empty()) {
+            const std::string& _s = this_._internal_confirm_password();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "authentication.SetNewPasswordRequest.confirm_password");
+            target = stream->WriteStringMaybeAliased(2, _s, target);
+          }
+
+          if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+            target =
+                ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+                    this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+          }
+          // @@protoc_insertion_point(serialize_to_array_end:authentication.SetNewPasswordRequest)
+          return target;
+        }
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::size_t SetNewPasswordRequest::ByteSizeLong(const MessageLite& base) {
+          const SetNewPasswordRequest& this_ = static_cast<const SetNewPasswordRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::size_t SetNewPasswordRequest::ByteSizeLong() const {
+          const SetNewPasswordRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(message_byte_size_start:authentication.SetNewPasswordRequest)
+          ::size_t total_size = 0;
+
+          ::uint32_t cached_has_bits = 0;
+          // Prevent compiler warnings about cached_has_bits being unused
+          (void)cached_has_bits;
+
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+           {
+            // string password = 1;
+            if (!this_._internal_password().empty()) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_password());
+            }
+            // string confirm_password = 2;
+            if (!this_._internal_confirm_password().empty()) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_confirm_password());
+            }
+          }
+          return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                                     &this_._impl_._cached_size_);
+        }
+
+void SetNewPasswordRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<SetNewPasswordRequest*>(&to_msg);
+  auto& from = static_cast<const SetNewPasswordRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:authentication.SetNewPasswordRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_password().empty()) {
+    _this->_internal_set_password(from._internal_password());
+  }
+  if (!from._internal_confirm_password().empty()) {
+    _this->_internal_set_confirm_password(from._internal_confirm_password());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetNewPasswordRequest::CopyFrom(const SetNewPasswordRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:authentication.SetNewPasswordRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void SetNewPasswordRequest::InternalSwap(SetNewPasswordRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_, &other->_impl_.password_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.confirm_password_, &other->_impl_.confirm_password_, arena);
+}
+
+::google::protobuf::Metadata SetNewPasswordRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class SetNewPasswordResponse::_Internal {
+ public:
+};
+
+SetNewPasswordResponse::SetNewPasswordResponse(::google::protobuf::Arena* arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:authentication.SetNewPasswordResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE SetNewPasswordResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::authentication::SetNewPasswordResponse& from_msg)
+      : message_(arena, from.message_),
+        _cached_size_{0} {}
+
+SetNewPasswordResponse::SetNewPasswordResponse(
+    ::google::protobuf::Arena* arena,
+    const SetNewPasswordResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, _class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SetNewPasswordResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.status_ = from._impl_.status_;
+
+  // @@protoc_insertion_point(copy_constructor:authentication.SetNewPasswordResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE SetNewPasswordResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : message_(arena),
+        _cached_size_{0} {}
+
+inline void SetNewPasswordResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.status_ = {};
+}
+SetNewPasswordResponse::~SetNewPasswordResponse() {
+  // @@protoc_insertion_point(destructor:authentication.SetNewPasswordResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void SetNewPasswordResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.message_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::google::protobuf::MessageLite::ClassDataFull
+    SetNewPasswordResponse::_class_data_ = {
+        ::google::protobuf::Message::ClassData{
+            &_SetNewPasswordResponse_default_instance_._instance,
+            &_table_.header,
+            nullptr,  // OnDemandRegisterArenaDtor
+            nullptr,  // IsInitialized
+            &SetNewPasswordResponse::MergeImpl,
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+            ::google::protobuf::Message::GetDeleteImpl<SetNewPasswordResponse>(),
+            ::google::protobuf::Message::GetNewImpl<SetNewPasswordResponse>(),
+            ::google::protobuf::Message::GetClearImpl<SetNewPasswordResponse>(), &SetNewPasswordResponse::ByteSizeLong,
+                &SetNewPasswordResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+            PROTOBUF_FIELD_OFFSET(SetNewPasswordResponse, _impl_._cached_size_),
+            false,
+        },
+        &SetNewPasswordResponse::kDescriptorMethods,
+        &descriptor_table_authentication_2eproto,
+        nullptr,  // tracker
+};
+const ::google::protobuf::MessageLite::ClassData* SetNewPasswordResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_class_data_.tc_table);
+  return _class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 53, 2> SetNewPasswordResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    _class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::authentication::SetNewPasswordResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string message = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SetNewPasswordResponse, _impl_.message_)}},
+    // .authentication.Status status = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetNewPasswordResponse, _impl_.status_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetNewPasswordResponse, _impl_.status_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .authentication.Status status = 1;
+    {PROTOBUF_FIELD_OFFSET(SetNewPasswordResponse, _impl_.status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
+    // string message = 2;
+    {PROTOBUF_FIELD_OFFSET(SetNewPasswordResponse, _impl_.message_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\45\0\7\0\0\0\0\0"
+    "authentication.SetNewPasswordResponse"
+    "message"
+  }},
+};
+
+PROTOBUF_NOINLINE void SetNewPasswordResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:authentication.SetNewPasswordResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.message_.ClearToEmpty();
+  _impl_.status_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::uint8_t* SetNewPasswordResponse::_InternalSerialize(
+            const MessageLite& base, ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) {
+          const SetNewPasswordResponse& this_ = static_cast<const SetNewPasswordResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::uint8_t* SetNewPasswordResponse::_InternalSerialize(
+            ::uint8_t* target,
+            ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+          const SetNewPasswordResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(serialize_to_array_start:authentication.SetNewPasswordResponse)
+          ::uint32_t cached_has_bits = 0;
+          (void)cached_has_bits;
+
+          // .authentication.Status status = 1;
+          if (this_._internal_status() != 0) {
+            target = stream->EnsureSpace(target);
+            target = ::_pbi::WireFormatLite::WriteEnumToArray(
+                1, this_._internal_status(), target);
+          }
+
+          // string message = 2;
+          if (!this_._internal_message().empty()) {
+            const std::string& _s = this_._internal_message();
+            ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+                _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "authentication.SetNewPasswordResponse.message");
+            target = stream->WriteStringMaybeAliased(2, _s, target);
+          }
+
+          if (PROTOBUF_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+            target =
+                ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+                    this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+          }
+          // @@protoc_insertion_point(serialize_to_array_end:authentication.SetNewPasswordResponse)
+          return target;
+        }
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+        ::size_t SetNewPasswordResponse::ByteSizeLong(const MessageLite& base) {
+          const SetNewPasswordResponse& this_ = static_cast<const SetNewPasswordResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+        ::size_t SetNewPasswordResponse::ByteSizeLong() const {
+          const SetNewPasswordResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          // @@protoc_insertion_point(message_byte_size_start:authentication.SetNewPasswordResponse)
+          ::size_t total_size = 0;
+
+          ::uint32_t cached_has_bits = 0;
+          // Prevent compiler warnings about cached_has_bits being unused
+          (void)cached_has_bits;
+
+          ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+           {
+            // string message = 2;
+            if (!this_._internal_message().empty()) {
+              total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                              this_._internal_message());
+            }
+            // .authentication.Status status = 1;
+            if (this_._internal_status() != 0) {
+              total_size += 1 +
+                            ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
+            }
+          }
+          return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                                     &this_._impl_._cached_size_);
+        }
+
+void SetNewPasswordResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<SetNewPasswordResponse*>(&to_msg);
+  auto& from = static_cast<const SetNewPasswordResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:authentication.SetNewPasswordResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
+  }
+  if (from._internal_status() != 0) {
+    _this->_impl_.status_ = from._impl_.status_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetNewPasswordResponse::CopyFrom(const SetNewPasswordResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:authentication.SetNewPasswordResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void SetNewPasswordResponse::InternalSwap(SetNewPasswordResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  swap(_impl_.status_, other->_impl_.status_);
+}
+
+::google::protobuf::Metadata SetNewPasswordResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

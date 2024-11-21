@@ -2,13 +2,14 @@ syntax = "proto3";
 
 option go_package = "bookmarks/grpc/codegen/authentication";
 
-
 package authentication;
 
 service Authentication {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
-  
+  rpc ForgottenPassword(ForgottenPasswordRequest)
+      returns (ForgottenPasswordResponse);
+  rpc SetNewPassword(SetNewPasswordRequest) returns (SetNewPasswordResponse);
 }
 
 enum Status {
@@ -36,4 +37,21 @@ message SignUpRequest {
 message SignUpResponse {
   string message = 1;
   Status status = 2;
+}
+
+message ForgottenPasswordRequest { string email = 1; }
+
+message ForgottenPasswordResponse {
+  Status status = 1;
+  string message = 2;
+}
+
+message SetNewPasswordRequest {
+  string password = 1;
+  string confirm_password = 2;
+}
+
+message SetNewPasswordResponse {
+  Status status = 1;
+  string message = 2;
 }

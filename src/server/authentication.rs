@@ -31,6 +31,32 @@ pub struct SignUpResponse {
     #[prost(enumeration = "Status", tag = "2")]
     pub status: i32,
 }
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ForgottenPasswordRequest {
+    #[prost(string, tag = "1")]
+    pub email: ::prost::alloc::string::String,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ForgottenPasswordResponse {
+    #[prost(enumeration = "Status", tag = "1")]
+    pub status: i32,
+    #[prost(string, tag = "2")]
+    pub message: ::prost::alloc::string::String,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetNewPasswordRequest {
+    #[prost(string, tag = "1")]
+    pub password: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub confirm_password: ::prost::alloc::string::String,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetNewPasswordResponse {
+    #[prost(enumeration = "Status", tag = "1")]
+    pub status: i32,
+    #[prost(string, tag = "2")]
+    pub message: ::prost::alloc::string::String,
+}
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum Status {
@@ -78,6 +104,20 @@ pub mod authentication_server {
             &self,
             request: tonic::Request<super::LoginRequest>,
         ) -> std::result::Result<tonic::Response<super::LoginResponse>, tonic::Status>;
+        async fn forgotten_password(
+            &self,
+            request: tonic::Request<super::ForgottenPasswordRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ForgottenPasswordResponse>,
+            tonic::Status,
+        >;
+        async fn set_new_password(
+            &self,
+            request: tonic::Request<super::SetNewPasswordRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SetNewPasswordResponse>,
+            tonic::Status,
+        >;
     }
     #[derive(Debug)]
     pub struct AuthenticationServer<T> {
@@ -229,6 +269,98 @@ pub mod authentication_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = LoginSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/authentication.Authentication/ForgottenPassword" => {
+                    #[allow(non_camel_case_types)]
+                    struct ForgottenPasswordSvc<T: Authentication>(pub Arc<T>);
+                    impl<
+                        T: Authentication,
+                    > tonic::server::UnaryService<super::ForgottenPasswordRequest>
+                    for ForgottenPasswordSvc<T> {
+                        type Response = super::ForgottenPasswordResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ForgottenPasswordRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Authentication>::forgotten_password(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ForgottenPasswordSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/authentication.Authentication/SetNewPassword" => {
+                    #[allow(non_camel_case_types)]
+                    struct SetNewPasswordSvc<T: Authentication>(pub Arc<T>);
+                    impl<
+                        T: Authentication,
+                    > tonic::server::UnaryService<super::SetNewPasswordRequest>
+                    for SetNewPasswordSvc<T> {
+                        type Response = super::SetNewPasswordResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetNewPasswordRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Authentication>::set_new_password(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = SetNewPasswordSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

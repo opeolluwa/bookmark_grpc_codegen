@@ -41,6 +41,40 @@ pub struct SignUpResponse {
 }
 #[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
 #[ts(export)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ForgottenPasswordRequest {
+    #[prost(string, tag = "1")]
+    pub email: ::prost::alloc::string::String,
+}
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ForgottenPasswordResponse {
+    #[prost(enumeration = "Status", tag = "1")]
+    pub status: i32,
+    #[prost(string, tag = "2")]
+    pub message: ::prost::alloc::string::String,
+}
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetNewPasswordRequest {
+    #[prost(string, tag = "1")]
+    pub password: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub confirm_password: ::prost::alloc::string::String,
+}
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetNewPasswordResponse {
+    #[prost(enumeration = "Status", tag = "1")]
+    pub status: i32,
+    #[prost(string, tag = "2")]
+    pub message: ::prost::alloc::string::String,
+}
+#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]
+#[ts(export)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum Status {
@@ -198,6 +232,58 @@ pub mod authentication_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("authentication.Authentication", "Login"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn forgotten_password(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ForgottenPasswordRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ForgottenPasswordResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/authentication.Authentication/ForgottenPassword",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("authentication.Authentication", "ForgottenPassword"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn set_new_password(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetNewPasswordRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SetNewPasswordResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/authentication.Authentication/SetNewPassword",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("authentication.Authentication", "SetNewPassword"),
+                );
             self.inner.unary(req, path, codec).await
         }
     }

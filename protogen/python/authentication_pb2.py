@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61uthentication.proto\x12\x0e\x61uthentication\"/\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"/\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"W\n\rSignUpRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\"I\n\x0eSignUpResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12&\n\x06status\x18\x02 \x01(\x0e\x32\x16.authentication.Status*\x19\n\x06Status\x12\x06\n\x02Ok\x10\x00\x12\x07\n\x03\x42\x61\x64\x10\x01\x32\x9f\x01\n\x0e\x41uthentication\x12G\n\x06SignUp\x12\x1d.authentication.SignUpRequest\x1a\x1e.authentication.SignUpResponse\x12\x44\n\x05Login\x12\x1c.authentication.LoginRequest\x1a\x1d.authentication.LoginResponseB\'Z%bookmarks/grpc/codegen/authenticationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61uthentication.proto\x12\x0e\x61uthentication\"/\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"/\n\rLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"W\n\rSignUpRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\"I\n\x0eSignUpResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\x12&\n\x06status\x18\x02 \x01(\x0e\x32\x16.authentication.Status\")\n\x18\x46orgottenPasswordRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"T\n\x19\x46orgottenPasswordResponse\x12&\n\x06status\x18\x01 \x01(\x0e\x32\x16.authentication.Status\x12\x0f\n\x07message\x18\x02 \x01(\t\"C\n\x15SetNewPasswordRequest\x12\x10\n\x08password\x18\x01 \x01(\t\x12\x18\n\x10\x63onfirm_password\x18\x02 \x01(\t\"Q\n\x16SetNewPasswordResponse\x12&\n\x06status\x18\x01 \x01(\x0e\x32\x16.authentication.Status\x12\x0f\n\x07message\x18\x02 \x01(\t*\x19\n\x06Status\x12\x06\n\x02Ok\x10\x00\x12\x07\n\x03\x42\x61\x64\x10\x01\x32\xea\x02\n\x0e\x41uthentication\x12G\n\x06SignUp\x12\x1d.authentication.SignUpRequest\x1a\x1e.authentication.SignUpResponse\x12\x44\n\x05Login\x12\x1c.authentication.LoginRequest\x1a\x1d.authentication.LoginResponse\x12h\n\x11\x46orgottenPassword\x12(.authentication.ForgottenPasswordRequest\x1a).authentication.ForgottenPasswordResponse\x12_\n\x0eSetNewPassword\x12%.authentication.SetNewPasswordRequest\x1a&.authentication.SetNewPasswordResponseB\'Z%bookmarks/grpc/codegen/authenticationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'authentication_pb2', _globa
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z%bookmarks/grpc/codegen/authentication'
-  _globals['_STATUS']._serialized_start=302
-  _globals['_STATUS']._serialized_end=327
+  _globals['_STATUS']._serialized_start=583
+  _globals['_STATUS']._serialized_end=608
   _globals['_LOGINREQUEST']._serialized_start=40
   _globals['_LOGINREQUEST']._serialized_end=87
   _globals['_LOGINRESPONSE']._serialized_start=89
@@ -42,6 +42,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SIGNUPREQUEST']._serialized_end=225
   _globals['_SIGNUPRESPONSE']._serialized_start=227
   _globals['_SIGNUPRESPONSE']._serialized_end=300
-  _globals['_AUTHENTICATION']._serialized_start=330
-  _globals['_AUTHENTICATION']._serialized_end=489
+  _globals['_FORGOTTENPASSWORDREQUEST']._serialized_start=302
+  _globals['_FORGOTTENPASSWORDREQUEST']._serialized_end=343
+  _globals['_FORGOTTENPASSWORDRESPONSE']._serialized_start=345
+  _globals['_FORGOTTENPASSWORDRESPONSE']._serialized_end=429
+  _globals['_SETNEWPASSWORDREQUEST']._serialized_start=431
+  _globals['_SETNEWPASSWORDREQUEST']._serialized_end=498
+  _globals['_SETNEWPASSWORDRESPONSE']._serialized_start=500
+  _globals['_SETNEWPASSWORDRESPONSE']._serialized_end=581
+  _globals['_AUTHENTICATION']._serialized_start=611
+  _globals['_AUTHENTICATION']._serialized_end=973
 # @@protoc_insertion_point(module_scope)

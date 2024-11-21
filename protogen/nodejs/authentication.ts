@@ -76,6 +76,25 @@ export interface SignUpResponse {
   status: Status;
 }
 
+export interface ForgottenPasswordRequest {
+  email: string;
+}
+
+export interface ForgottenPasswordResponse {
+  status: Status;
+  message: string;
+}
+
+export interface SetNewPasswordRequest {
+  password: string;
+  confirmPassword: string;
+}
+
+export interface SetNewPasswordResponse {
+  status: Status;
+  message: string;
+}
+
 function createBaseLoginRequest(): LoginRequest {
   return { email: "", password: "" };
 }
@@ -412,6 +431,292 @@ export const SignUpResponse: MessageFns<SignUpResponse> = {
   },
 };
 
+function createBaseForgottenPasswordRequest(): ForgottenPasswordRequest {
+  return { email: "" };
+}
+
+export const ForgottenPasswordRequest: MessageFns<ForgottenPasswordRequest> = {
+  encode(message: ForgottenPasswordRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.email !== "") {
+      writer.uint32(10).string(message.email);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ForgottenPasswordRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseForgottenPasswordRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.email = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ForgottenPasswordRequest {
+    return { email: isSet(object.email) ? globalThis.String(object.email) : "" };
+  },
+
+  toJSON(message: ForgottenPasswordRequest): unknown {
+    const obj: any = {};
+    if (message.email !== "") {
+      obj.email = message.email;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ForgottenPasswordRequest>, I>>(base?: I): ForgottenPasswordRequest {
+    return ForgottenPasswordRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ForgottenPasswordRequest>, I>>(object: I): ForgottenPasswordRequest {
+    const message = createBaseForgottenPasswordRequest();
+    message.email = object.email ?? "";
+    return message;
+  },
+};
+
+function createBaseForgottenPasswordResponse(): ForgottenPasswordResponse {
+  return { status: 0, message: "" };
+}
+
+export const ForgottenPasswordResponse: MessageFns<ForgottenPasswordResponse> = {
+  encode(message: ForgottenPasswordResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.status !== 0) {
+      writer.uint32(8).int32(message.status);
+    }
+    if (message.message !== "") {
+      writer.uint32(18).string(message.message);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ForgottenPasswordResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseForgottenPasswordResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.status = reader.int32() as any;
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.message = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ForgottenPasswordResponse {
+    return {
+      status: isSet(object.status) ? statusFromJSON(object.status) : 0,
+      message: isSet(object.message) ? globalThis.String(object.message) : "",
+    };
+  },
+
+  toJSON(message: ForgottenPasswordResponse): unknown {
+    const obj: any = {};
+    if (message.status !== 0) {
+      obj.status = statusToJSON(message.status);
+    }
+    if (message.message !== "") {
+      obj.message = message.message;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ForgottenPasswordResponse>, I>>(base?: I): ForgottenPasswordResponse {
+    return ForgottenPasswordResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ForgottenPasswordResponse>, I>>(object: I): ForgottenPasswordResponse {
+    const message = createBaseForgottenPasswordResponse();
+    message.status = object.status ?? 0;
+    message.message = object.message ?? "";
+    return message;
+  },
+};
+
+function createBaseSetNewPasswordRequest(): SetNewPasswordRequest {
+  return { password: "", confirmPassword: "" };
+}
+
+export const SetNewPasswordRequest: MessageFns<SetNewPasswordRequest> = {
+  encode(message: SetNewPasswordRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.password !== "") {
+      writer.uint32(10).string(message.password);
+    }
+    if (message.confirmPassword !== "") {
+      writer.uint32(18).string(message.confirmPassword);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SetNewPasswordRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSetNewPasswordRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.password = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.confirmPassword = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SetNewPasswordRequest {
+    return {
+      password: isSet(object.password) ? globalThis.String(object.password) : "",
+      confirmPassword: isSet(object.confirmPassword) ? globalThis.String(object.confirmPassword) : "",
+    };
+  },
+
+  toJSON(message: SetNewPasswordRequest): unknown {
+    const obj: any = {};
+    if (message.password !== "") {
+      obj.password = message.password;
+    }
+    if (message.confirmPassword !== "") {
+      obj.confirmPassword = message.confirmPassword;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SetNewPasswordRequest>, I>>(base?: I): SetNewPasswordRequest {
+    return SetNewPasswordRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SetNewPasswordRequest>, I>>(object: I): SetNewPasswordRequest {
+    const message = createBaseSetNewPasswordRequest();
+    message.password = object.password ?? "";
+    message.confirmPassword = object.confirmPassword ?? "";
+    return message;
+  },
+};
+
+function createBaseSetNewPasswordResponse(): SetNewPasswordResponse {
+  return { status: 0, message: "" };
+}
+
+export const SetNewPasswordResponse: MessageFns<SetNewPasswordResponse> = {
+  encode(message: SetNewPasswordResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.status !== 0) {
+      writer.uint32(8).int32(message.status);
+    }
+    if (message.message !== "") {
+      writer.uint32(18).string(message.message);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SetNewPasswordResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSetNewPasswordResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.status = reader.int32() as any;
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.message = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SetNewPasswordResponse {
+    return {
+      status: isSet(object.status) ? statusFromJSON(object.status) : 0,
+      message: isSet(object.message) ? globalThis.String(object.message) : "",
+    };
+  },
+
+  toJSON(message: SetNewPasswordResponse): unknown {
+    const obj: any = {};
+    if (message.status !== 0) {
+      obj.status = statusToJSON(message.status);
+    }
+    if (message.message !== "") {
+      obj.message = message.message;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SetNewPasswordResponse>, I>>(base?: I): SetNewPasswordResponse {
+    return SetNewPasswordResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SetNewPasswordResponse>, I>>(object: I): SetNewPasswordResponse {
+    const message = createBaseSetNewPasswordResponse();
+    message.status = object.status ?? 0;
+    message.message = object.message ?? "";
+    return message;
+  },
+};
+
 export type AuthenticationService = typeof AuthenticationService;
 export const AuthenticationService = {
   signUp: {
@@ -432,11 +737,32 @@ export const AuthenticationService = {
     responseSerialize: (value: LoginResponse) => Buffer.from(LoginResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer) => LoginResponse.decode(value),
   },
+  forgottenPassword: {
+    path: "/authentication.Authentication/ForgottenPassword",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ForgottenPasswordRequest) => Buffer.from(ForgottenPasswordRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => ForgottenPasswordRequest.decode(value),
+    responseSerialize: (value: ForgottenPasswordResponse) =>
+      Buffer.from(ForgottenPasswordResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => ForgottenPasswordResponse.decode(value),
+  },
+  setNewPassword: {
+    path: "/authentication.Authentication/SetNewPassword",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: SetNewPasswordRequest) => Buffer.from(SetNewPasswordRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => SetNewPasswordRequest.decode(value),
+    responseSerialize: (value: SetNewPasswordResponse) => Buffer.from(SetNewPasswordResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => SetNewPasswordResponse.decode(value),
+  },
 } as const;
 
 export interface AuthenticationServer extends UntypedServiceImplementation {
   signUp: handleUnaryCall<SignUpRequest, SignUpResponse>;
   login: handleUnaryCall<LoginRequest, LoginResponse>;
+  forgottenPassword: handleUnaryCall<ForgottenPasswordRequest, ForgottenPasswordResponse>;
+  setNewPassword: handleUnaryCall<SetNewPasswordRequest, SetNewPasswordResponse>;
 }
 
 export interface AuthenticationClient extends Client {
@@ -469,6 +795,36 @@ export interface AuthenticationClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: LoginResponse) => void,
+  ): ClientUnaryCall;
+  forgottenPassword(
+    request: ForgottenPasswordRequest,
+    callback: (error: ServiceError | null, response: ForgottenPasswordResponse) => void,
+  ): ClientUnaryCall;
+  forgottenPassword(
+    request: ForgottenPasswordRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ForgottenPasswordResponse) => void,
+  ): ClientUnaryCall;
+  forgottenPassword(
+    request: ForgottenPasswordRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ForgottenPasswordResponse) => void,
+  ): ClientUnaryCall;
+  setNewPassword(
+    request: SetNewPasswordRequest,
+    callback: (error: ServiceError | null, response: SetNewPasswordResponse) => void,
+  ): ClientUnaryCall;
+  setNewPassword(
+    request: SetNewPasswordRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: SetNewPasswordResponse) => void,
+  ): ClientUnaryCall;
+  setNewPassword(
+    request: SetNewPasswordRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: SetNewPasswordResponse) => void,
   ): ClientUnaryCall;
 }
 
