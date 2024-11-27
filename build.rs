@@ -16,6 +16,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "#[derive(serde::Deserialize, ts_rs::TS, serde::Serialize)]",
         )
         .type_attribute(".", "#[ts(export)]")
+        // .type_attribute(".", "#[serde(rename_all=\"camelCase\")]")
         .out_dir("./src/client")
         .compile_protos(&proto_files, &["../proto"])?;
 

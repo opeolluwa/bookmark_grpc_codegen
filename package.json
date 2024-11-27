@@ -10,7 +10,7 @@
     "url": "git+https://github.com/opeolluwa/vault_grpc.git"
   },
   "author": "adeoye adefemi <adefemiadeoye@yahoo.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/opeolluwa/vault_grpc/issues"
   },
